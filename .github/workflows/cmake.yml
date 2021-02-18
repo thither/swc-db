@@ -137,10 +137,14 @@ jobs:
       run: sudo cmake --install . --config ${{ matrix.build_type }}
 
 
-    - name: Test
-      working-directory: ${{github.workspace}}/build/
+    - name: Test - integration
+      working-directory: ${{github.workspace}}/build/tests/integration/
       shell: bash
-      run: sudo ctest --output-on-failure -C ${{ matrix.build_type }}
+
+    #- name: Test
+    #  working-directory: ${{github.workspace}}/build/
+    #  shell: bash
+    #  run: sudo ctest --output-on-failure -C ${{ matrix.build_type }}
       
     #- name: Test - libswcdb_core
     #  working-directory: ${{github.workspace}}/build/tests/libswcdb_core/
