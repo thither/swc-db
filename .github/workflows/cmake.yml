@@ -62,6 +62,7 @@ jobs:
           GSSAPIAuthentication yes
         EOF
         sudo cp ~/.ssh/config /etc/ssh/ssh_config
+        export SWCDB_CLUSTER_SSH_CONFIG="`realpath ~/.ssh/config`"
         #
         sudo systemctl restart ssh
         #
