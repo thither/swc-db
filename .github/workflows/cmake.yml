@@ -135,7 +135,6 @@ jobs:
       working-directory: ${{github.workspace}}/build
       run: sudo cmake --install . --config ${{ matrix.build_type }}
 
-
     - name: Test - integration
       working-directory: ${{github.workspace}}/build/tests/integration/
       shell: bash
@@ -160,3 +159,4 @@ jobs:
     #  shell: bash
     #  run: |
     #    sudo ctest --output-on-failure -C ${{ matrix.build_type }}
+
